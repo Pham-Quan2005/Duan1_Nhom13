@@ -58,10 +58,10 @@
                     <thead>
 
                         <tr>
-                            <th></th>
-                            <th scope="col">Stt</th>
+                        
+                            <th scope="col">Id</th>
                             <th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Ảnh sản phẩm</th>
+                          
                             <th scope="col">Trạng thái</th>
                             <th scope="col">Hành động</th>
                         </tr>
@@ -72,9 +72,7 @@
                         foreach ($listCategory as $sp) : ?>
 
                             <tr>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
+                              
                                 <td scope="row">
                                     <?= $sp->id ?></td>
                                 <td>
@@ -83,12 +81,7 @@
                                         <?= $sp->name ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <div style=" width:190px; height:150px">
-                                        <img src="<?= $sp->image_src ?>" alt="icon"
-                                            style="width:100%; height:100%">
-                                    </div>
-                                </td>
+                              
 
                                 <td>
                                     <?php

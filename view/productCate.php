@@ -20,7 +20,7 @@ include_once 'components/header.php';
                             <!-- Hiển thị ảnh dạng nâng cao -->
 
                             <div class="bg-danger ratio-1x1">
-                                <img src="<?= $sp->image_src ?>" alt="" class="mw-100 mh-100" style="width: 285px;height: 180px">
+                                <img src="./upload/<?= $sp->image_src ?>" alt="" class="mw-100 mh-100" style="width: 285px;height: 180px">
                             </div>
                             <!-- Text và button -->
                             <div class="p-2">

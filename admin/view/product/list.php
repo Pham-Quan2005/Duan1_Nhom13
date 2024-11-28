@@ -41,9 +41,7 @@ include "view/components/header.php";
         <div class="pt-4 ms-4 me-4">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
-
                     <tr>
-                        <th></th>
                         <th scope="col">Stt</th>
                         <th scope="col">Ảnh sản phẩm</th>
                         <th scope="col">Tên sản phẩm</th>
@@ -60,9 +58,6 @@ include "view/components/header.php";
                     foreach ($danhSachSp as $sp) :
                     ?>
                         <tr>
-                            <td>
-                                <input type="checkbox">
-                            </td>
                             <td scope="row">
                                 <?= $sp->id ?></td>
                             <td>

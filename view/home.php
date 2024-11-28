@@ -45,15 +45,15 @@
                     <!-- Box sản phẩm -->
                     <div class="col">
                         <div class="card">
-                        <img src="<?= $sp->image_src ?>" class="card-img-top w-100" style="height: 150px; object-fit: cover;" alt="<?= $sp->name ?>">
+                        <img src="./upload/<?=$sp->image_src?>" class="card-img-top w-100" style="height: 150px; object-fit: cover;" alt="<?= $sp->name ?>">
                             <div class="card-body flex-1">
                                 <h5 class="card-title truncate"><?= $sp->name ?></h5>
                                 <span class="fw-bold"><?= $sp->price ?>VND</span>
                                 <form action="" method="POST">
                                     <input type="hidden" name="id" value="<?= $sp->id ?>">
                                     <input type="hidden" name="quantity" value="1">
-                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1" name=""><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
-                                    <button<a href="checkout-form.php" class="btn btn-danger rounded-pill w-100 btn-sm mt-1">Mua ngay</a></button>
+                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
+                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="checkout-form.php">Mua hàng</a></button>
                                 </form>
                             </div>
                         </div>

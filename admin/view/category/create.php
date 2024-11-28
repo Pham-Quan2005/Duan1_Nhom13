@@ -24,18 +24,15 @@
         <div class="shadow bg-light pb-5 mt-4 ms-4 mb-4 col-md-10">
             <form action="" class="pb-5 mt-4 ms-4 me-4" method="POST" enctype="multipart/form-data">
                 <div>
-                    <h4 class="p-3">Thêm sản phẩm</h4>
+                    <h4 class="p-3">Thêm danh mục</h4>
                 </div>
                 <hr>
                 <div class="row">
+               
                     <div class="">
-                        <label for="inputEmail4" class="form-label">Ảnh sản phẩm</label>
-                        <input type="file" name="image_upload" class="form-control rounded-0" id="inputEmail4">
-                    </div>
-                    <div class="">
-                        <label for="inputEmail4" class="form-label">Tên sản phẩm</label>
+                        <label for="inputEmail4" class="form-label">Tên danh mục</label>
                         <input type="text" name="name" class="form-control rounded-0" id="inputEmail4"
-                            placeholder="Nhập tên sản phẩm">
+                            placeholder="Nhập tên danh mục">
                     </div>
                     <div class="mt-3">
                         <span class="form-label">Lựa chọn</span>

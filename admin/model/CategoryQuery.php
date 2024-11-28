@@ -1,5 +1,4 @@
 <?php
-
 class CategoryQuery
 {
     public $pdo;
@@ -33,7 +32,6 @@ class CategoryQuery
     }
     public function getOneCate($pro_id)
     {
-
         //gọi model lấy danh sách sản phẩm
         // $listCategory = $this->categoryQuery->all_category();
         try {
@@ -73,15 +71,11 @@ class CategoryQuery
             echo "Lỗi" . $e->getMessage();
         }
     }
-
-
     public function insert(Category $category)
     {
         try {
-            $sql = "INSERT INTO `category`(`id`, `name`, `image_src`, `status`) VALUES (NULL,'$category->name','$category->status')";
-
+            $sql = "INSERT INTO `category`(`id`, `name`, `status`) VALUES (NULL,'$category->name','$category->status')";
             $data = $this->pdo->exec($sql);
-
             if ($data === 1) {
                 return "ok";
             }
@@ -95,16 +89,13 @@ class CategoryQuery
     {
         try {
             $sql = "SELECT * FROM category WHERE id = $id";
-
             $data = $this->pdo->query($sql)->fetch();
 
             if ($data !== false) {
                 $category = new Category();
                 $category->id = $data['id'];
                 $category->name = $data['name'];
-               
                 $category->status = $data['status'];
-
                 return $category;
             } else {
                 echo "bảng ghi không tồn tại";
@@ -113,8 +104,6 @@ class CategoryQuery
             echo "Lỗi" . $e->getMessage();
         }
     }
-
-
     public function update($id, Category $category)
     {
         try {

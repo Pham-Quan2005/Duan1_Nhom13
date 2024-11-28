@@ -8,7 +8,6 @@
         public $image_src;
         public $category_id;
         public $status;
-        
     }
 
 ?>

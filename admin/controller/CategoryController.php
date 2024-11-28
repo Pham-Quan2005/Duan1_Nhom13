@@ -46,12 +46,9 @@ class CategoryController
 
             if (isset($_FILES['image_upload']) && $_FILES['image_upload']['tmp_name']) {
                 $hinh_anh = $_FILES['image_upload']['tmp_name'];
-                $vi_tri_luu = "../img/sanpham" . $_FILES['image_upload']['name'];
+                $vi_tri_luu = "./upload/" . $_FILES['image_upload']['name'];
             }
-
-
             $relust = $this->categoryQuery->insert($category);
-
             if ($relust === "ok") {
                 echo "tạo mới thành công";
                 header("Location: ?act=list-category");
@@ -59,11 +56,8 @@ class CategoryController
                 echo "tạo mới thất bại";
             }
         }
-
         include "view/category/create.php";
     }
-
-
     public function Update($id)
     {
         if (!isset($_GET['id'])) {
@@ -72,11 +66,8 @@ class CategoryController
             $category_id = $_GET['id'];
         }
         $listCategory = $this->categoryQuery->all_category();
-
         $updateCate = $this->categoryQuery->getOneCate($category_id);
-
         if ($id !== "") {
-
             if (isset($_POST['submitFormCreateCate'])) {
                 $category = new Category();
                 $category->name = trim($_POST['name']);

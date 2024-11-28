@@ -8,15 +8,13 @@
     foreach ($detailPro as $sp) { ?>
         <div class="row p-4">
             <div class="col-md-4 rounded-2">
-                <img src="<?= $sp->image_src ?>" class="rounded-4" alt="" width="100%">
+                <img src="./upload/<?= $sp->image_src ?>" class="rounded-4" alt="" width="100%">
             </div>
 
             <div class="col-md-6 d-flex justify-content-center flex-column">
                 <h3 class="fw-bold fs-2"><?= $sp->name ?></h3>
                 <h2 class="text-danger fw-bold pe-2 fs-5s"><?= $sp->price ?> VNĐ</h2>
-                <div class="d-flex align-items-center">
-                    <span class="badge bg-success rounded-pill ps-2 ms-3"><?= $sp->status ?></span>
-                </div>
+             
                 <br>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination d-flex">
@@ -33,7 +31,7 @@
                         </li>
                     </ul>
                 </nav>
-                <span>Số Lượng: <?= $sp->quantity ?> con</span>
+                <span>Số Lượng: <?= $sp->quantity ?> còn</span>
                 <br>
                 <div>
     <a href="#"><button class="btn btn-success">Mua ngay</button></a>

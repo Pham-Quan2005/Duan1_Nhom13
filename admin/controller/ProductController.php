@@ -53,15 +53,31 @@ class  ProductController
             $product->category_id = trim($_POST['category_id']);
 
             if (isset($_FILES['image_upload']) && $_FILES['image_upload']['tmp_name']) {
+                // Kiểm tra và lấy tệp ảnh tải lên
                 $image = $_FILES['image_upload']['tmp_name'];
-                $vi_tri_luu_anh = "../img/sanpham" . $_FILES['image_upload']['name'];
-
-                if (move_uploaded_file($image, $vi_tri_luu_anh)) {
-                    echo "upload ảnh thành công";
-                    $product->image_src = '../img/sanpham' . $_FILES['image_upload']['name'];
-                } else {
-                    echo "upload thất bại";
+                // Đường dẫn nơi lưu ảnh
+                $target_dir = "../upload/";
+                // Tên ảnh sau khi tải lên, có thể thay đổi tên để tránh trùng
+                $target_file = $target_dir . basename($_FILES['image_upload']['name']);
+                
+                // Kiểm tra nếu tệp là ảnh
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                $allowedTypes = array("jpg", "jpeg", "png", "gif");
+                if (!in_array($imageFileType, $allowedTypes)) {
+                    echo "Chỉ chấp nhận ảnh định dạng JPG, JPEG, PNG hoặc GIF.";
+                    exit;
                 }
+                
+                // Kiểm tra nếu ảnh đã được tải lên thành công
+                if (move_uploaded_file($image, $target_file)) {
+                    echo "Upload ảnh thành công.";
+                    // Cập nhật đường dẫn ảnh cho sản phẩm
+                    $product->image_src = $target_file;
+                } else {
+                    echo "Upload thất bại.";
+                }
+            } else {
+                echo "Không có tệp ảnh nào được tải lên.";
             }
 
             $result = $this->productQuery->create($product);
@@ -152,11 +168,11 @@ class  ProductController
 
                 if (isset($_FILES['image_upload']) && $_FILES['image_upload']['tmp_name']) {
                     $image = $_FILES['image_upload']['tmp_name'];
-                    $vi_tri_luu_anh = "../img/sanpham" . $_FILES['image_upload']['name'];
+                    $vi_tri_luu_anh = "../upload/" . $_FILES['image_upload']['name'];
 
                     if (move_uploaded_file($image, $vi_tri_luu_anh)) {
                         echo "upload ảnh thành công";
-                        $product->image_src = '..img/sanpham' . $_FILES['image_upload']['name'];
+                        $product->image_src = '../upload/' . $_FILES['image_upload']['name'];
                     } else {
                         echo "upload thất bại";
                     }
