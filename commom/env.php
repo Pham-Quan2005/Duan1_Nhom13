@@ -7,4 +7,4 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'duanmau');
 
-define('BASE_URL', 'http://localhost/Du_an_1_N13/');
+define('BASE_URL', 'http://localhost/Du_an1_2/');

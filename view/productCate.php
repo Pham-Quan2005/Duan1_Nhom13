@@ -28,7 +28,7 @@ include_once 'components/header.php';
                                 <div class="mb-3" style="text-align: center; color: red; font-size:larger">
                                     <span class=""><?= $sp->price ?></span>
                                 </div>
-                                <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1" name="detail"><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
+                                <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1" name="detail1"><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
                                 <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1">Mua ngay</button>
                             </div>
                         </div>

@@ -36,9 +36,14 @@
                 <span>Số Lượng: <?= $sp->quantity ?> con</span>
                 <br>
                 <div>
-                    <a href="./XacNhanSp.html"><button class="btn btn-success">Mua ngay</button></a>
-                    <button class="btn btn-success">Thêm vào giỏ hàng</button>
-                </div>
+    <a href="#"><button class="btn btn-success">Mua ngay</button></a>
+    <form action="?act=cart&action=add" method="POST" style="display:inline;">
+        <input type="hidden" name="product_id" value="<?= $sp->id ?>">
+        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 0 ?>">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="btn btn-success">Thêm vào giỏ hàng</button>
+    </form>
+</div>
                 <br>
                 <div class="border-top">
                     <span class=" pt-1">Danh Mục: <?= $sp->category_id ?></span>

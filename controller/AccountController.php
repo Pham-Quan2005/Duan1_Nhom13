@@ -107,11 +107,7 @@ class AccountController
 
     public function logout()
     {
-
-
         session_destroy();
-
-
         header("Location: ?act=login");
     }
 }

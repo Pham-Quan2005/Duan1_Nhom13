@@ -33,7 +33,6 @@ function converToObjectCategory($row)
     $category = new Category();
     $category->id = $row['id'];
     $category->name = $row['name'];
-    $category->image_src = $row['image_src'];
     $category->status = $row['status'];
     return $category;
 }

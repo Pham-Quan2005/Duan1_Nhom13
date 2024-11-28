@@ -78,8 +78,7 @@ class CategoryQuery
     public function insert(Category $category)
     {
         try {
-            $sql = "INSERT INTO `category`(`id`, `name`, `image_src`, `status`) VALUES (NULL,'$category->name','$category->image_src','$category->status')";
-
+            $sql = "INSERT INTO `category`(`id`, `name`, `image_src`, `status`) VALUES (NULL,'$category->name','$category->status')";
 
             $data = $this->pdo->exec($sql);
 
@@ -103,7 +102,7 @@ class CategoryQuery
                 $category = new Category();
                 $category->id = $data['id'];
                 $category->name = $data['name'];
-                $category->image_src = $data['image_src'];
+               
                 $category->status = $data['status'];
 
                 return $category;
@@ -119,11 +118,8 @@ class CategoryQuery
     public function update($id, Category $category)
     {
         try {
-            $sql = "UPDATE `category` SET `name`='$category->name',`image_src`='$category->image_src',`status`='$category->status' WHERE id = $id";
-
-
+            $sql = "UPDATE `category` SET `name`='$category->name',`status`='$category->status' WHERE id = $id";
             $data = $this->pdo->exec($sql);
-
             if ($data === 1 || $data === 0) {
                 return "ok";
             }

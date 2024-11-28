@@ -1,162 +1,67 @@
 
-        <?php
+<?php
     include "view/components/header.php";
     ?>
-    
+     <div id="banner">
+            <div class="box-left">
+                <h2>
+                    <span>THỨC ĂN</span>
+                    <br>
+                    <span>THƯỢNG HẠNG</span>
+                </h2>
+                <p>Chuyên cung cấp các món ăn đảm bảo dinh dưỡng
+                    hợp vệ sinh đến người dùng,phục vụ người dùng 1 cái
+                    hoàn hảo nhất</p>
+                <button>Mua ngay</button>
+            </div>
+            <div class="box-right">
+                <img src="assets/img_1.png" alt="">
+                <img src="assets/img_2.png" alt="">
+                <img src="assets/img_3.png" alt="">
+            </div>
+            <div class="to-bottom">
+                <a href="">
+                    <img src="assets/to_bottom.png" alt="">
+                </a>
+            </div>
+        </div>
         <div id="wp-products">
+        <div class="container">
+    <div id="ant-layout">
+    <section class="search-quan">
+    <i class="fas fa-search"></i>
+    <form action="thucdon.php" method="GET">
+        <input name="search" type="text" placeholder="Tìm món hoặc thức ăn">
+    </form>
+</section>
+    </div>
+    </div>
             <h2>SẢN PHẨM CỦA CHÚNG TÔI</h2>
-            <ul id="list-products">
-                <div class="item">
-                    <img src="assets/product_1.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
+            <main class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <?php
+                extract($listProductLatest);
+                foreach ($listProductLatest as $sp) : ?>
+                    <!-- Box sản phẩm -->
+                    <div class="col">
+                        <div class="card">
+                        <img src="<?= $sp->image_src ?>" class="card-img-top w-100" style="height: 150px; object-fit: cover;" alt="<?= $sp->name ?>">
+                            <div class="card-body flex-1">
+                                <h5 class="card-title truncate"><?= $sp->name ?></h5>
+                                <span class="fw-bold"><?= $sp->price ?>VND</span>
+                                <form action="" method="POST">
+                                    <input type="hidden" name="id" value="<?= $sp->id ?>">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1" name=""><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
+                                    <button<a href="checkout-form.php" class="btn btn-danger rounded-pill w-100 btn-sm mt-1">Mua ngay</a></button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-
-
-                <div class="item">
-                    <img src="assets/product_2.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                    </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-
-
-                <div class="item">
-                    <img src="assets/product_3.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                    </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-                <div class="item">
-                    <img src="assets/product_4.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                    </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-
-                <div class="item">
-                    <img src="assets/product_5.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                    </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-
-                <div class="item">
-                    <img src="assets/product_6.png" alt="">
-                    <div class="stars">
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                        <span>
-                            <img src="assets/star.png" alt="">
-                        </span>
-                    </div>
-
-                    <div class="name">Món Ăn 1</div>
-                    <div class="desc">Mô Tả Ngắn Cho Sản Phẩm</div>
-                    <div class="price">500.000 VNĐ</div>
-                </div>
-            </ul>
+                    <!-- Hết box sản phẩm -->
+                <?php endforeach; ?>
+            </div>
+            </main>
             <div class="list-page">
                 <div class="item">
                     <a href="">1</a>

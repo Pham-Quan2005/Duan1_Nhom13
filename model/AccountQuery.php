@@ -37,33 +37,6 @@ class AccountQuery
             echo "<hr>";
         }
     }
-    // public function checkQuantri($email, $name)
-    // {
-    //     try {
-    //         $sql = "SELECT * FROM `account` WHERE email = '$email' and nane = '$name';";
-
-    //         $data = $this->pdo->query($sql)->fetch();
-
-    //         // trường hợp k tìm thấy tài khoẻn $data = false / 0
-    //         if ($data === false) {
-    //             return $data;
-    //         } else {
-    //             // chuyển đổi -> object 
-    //             $account = new Account();
-    //             $account->id = $data['id'];
-    //             $account->name = $data['name'];
-    //             $account->email = $data['email'];
-    //             $account->password = $data['password'];
-    //             $account->role = $data['role'];
-
-    //             return $account;
-    //         }
-    //     } catch (Exception $e) {
-    //         echo "Lỗi //" . $e->getMessage();
-    //         echo "<hr>";
-    //     }
-    // }
-
     public function insert(Account $account)
     {
         try {

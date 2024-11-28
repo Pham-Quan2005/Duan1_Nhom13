@@ -74,6 +74,6 @@ class HomeController
             ];
             array_push($_SESSION["myCart"], $array_pro);
         }
-        include "view/cart.php";
+        include "model/cart.php";
     }
 }

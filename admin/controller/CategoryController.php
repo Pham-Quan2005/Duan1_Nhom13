@@ -47,14 +47,6 @@ class CategoryController
             if (isset($_FILES['image_upload']) && $_FILES['image_upload']['tmp_name']) {
                 $hinh_anh = $_FILES['image_upload']['tmp_name'];
                 $vi_tri_luu = "../img/sanpham" . $_FILES['image_upload']['name'];
-
-                if (move_uploaded_file($hinh_anh, $vi_tri_luu)) {
-                    $category->image_src = '../img/sanpham' . $_FILES['image_upload']['name'];
-
-                    echo "upload thành công";
-                } else {
-                    echo "upload thất bại";
-                }
             }
 
 
@@ -89,22 +81,7 @@ class CategoryController
                 $category = new Category();
                 $category->name = trim($_POST['name']);
                 $category->status = trim($_POST['status']);
-
-
-                if (isset($_FILES['image_upload']) && $_FILES['image_upload']['tmp_name']) {
-                    $hinh_anh = $_FILES['image_upload']['tmp_name'];
-                    $vi_tri_luu = "../img/sanpham" . $_FILES['image_upload']['name'];
-
-                    if (move_uploaded_file($hinh_anh, $vi_tri_luu)) {
-                        $category->image_src = "../img/sanpham" . $_FILES['image_upload']['name'];
-                        echo "upload thành công";
-                    } else {
-                        echo "upload thất bại";
-                    }
-                }
-
                 $ketQua = $this->categoryQuery->update($id, $category);
-
                 if ($ketQua === "ok") {
                     echo "tạo thành công";
                     header("Location: ?act=list-category");

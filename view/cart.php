@@ -1,98 +1,94 @@
+<?php
+include "view/components/header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/be9ed8669f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Giỏ hàng</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .btn-remove {
+            color: white;
+            background-color: red;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .btn-remove:hover {
+            background-color: darkred;
+        }
+    </style>
 </head>
-
 <body>
-    <?php
-        include "view/components/header.php";
-    ?>
-    <!-- END HEADER -->
-    <!-- CONTENT -->
-    <main class="container">
-        <!-- Main content -->
-        <table class="table">
+    <div class="container">
+        <h1>Giỏ hàng của bạn</h1>
+        <table>
             <thead>
                 <tr>
-                    <th scope="col">Sản phẩm</th>
-                    <th scope="col" class="text-center">Đơn Giá</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Số Tiền</th>
-                    <th scope="col" class="text-center">Thao tác</th>
+                    <th>Ảnh sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá sản phẩm</th>
+                    <th>Tổng giá</th>
+                    <th>Hành động</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider">
-                <?php  
-                if(isset($_SESSION['myCart'])){
+            <tbody>
+    <?php if (!empty($cart)) : ?>
+        <?php foreach ($cart as $item) : ?>
+            <tr>
+                <td>
+                    <img src="<?= htmlspecialchars($item['image_src']) ?>" 
+                         alt="<?= htmlspecialchars($item['name']) ?>" 
+                         width="50">
+                </td>
+                <td><?= htmlspecialchars($item['name']) ?></td>
+                <td><?= htmlspecialchars($item['quantity']) ?></td>
+                <td><?= number_format(htmlspecialchars($item['price']), 0, ',', '.') ?> VNĐ</td>
+                <td><?= number_format(htmlspecialchars($item['price'] * $item['quantity']), 0, ',', '.') ?> VNĐ</td>
+                <td>
+                    <form action="?act=cart&action=remove" method="POST">
+                        <input type="hidden" name="user_id" value="<?= htmlspecialchars($_GET['user_id'] ?? 0) ?>">
+                        <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['product_id']) ?>"> <!-- Sửa lại product_id -->
+                        <button type="submit" class="btn-remove">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <tr>
+            <td colspan="6">Giỏ hàng của bạn hiện đang trống.</td>
+        </tr>
+    <?php endif; ?>
+</tbody>
 
-                foreach($_SESSION['myCart'] as $sp) :
-                ?>
-                <tr>
-                    <th scope="row" style="width: 50%;">
-                        <input type="checkbox" class="me-2">
-                        <img src="<?= BASE_URL . $sp["image_src"] ?>" width="10%" alt="">
-                        <span><?= $sp["name"] ?></span>
-                    </th>
-                    <td>
-                        <div class="d-flex text-center">
-                            <span class="text-black fw-bold pe-2"><?= $sp["price"] ?></span>
-                        </div>
-                    </td>
-                    <td>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination d-flex">
-                                <li class="page-item">
-                                    <a class="page-link text-success" aria-label="Next">
-                                        <span> - </span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link text-success" href="#">1</a></li>
-                                <li class="page-item">
-                                    <a class="page-link text-success" aria-label="Previous">
-                                        <i class="fa-solid fa-plus fa-xs"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </td>
-                    <td><?= $sp["total"] ?></td>
-                    <td>
-                        <button class="btn btn-danger">Xóa</button>
-                    </td>
-                </tr>
-                <?php  endforeach; }?>
-            </tbody>
         </table>
-        <div class="d-flex justify-content-between mb-3">
-            <div>
-                <input type="checkbox" class="me-3">
-                <span class="me-3">Chọn tất cả(3)</span>
-                <button class="btn btn-danger">Xóa</button>
-            </div>
-            <div class="d-flex">
-                <div>
-                    <span><b>Tổng tiền: </b>1.000.000đ</span>
-                </div>
-                <a href="./XacNhanSp.html" style="width: 100%; height: 35px;">
-                    <button class="btn btn-success">Mua hàng</button>
-                </a>
-            </div>
-        </div>
-        <!-- End main content -->
-    </main>
-    <!-- FOOTER -->
-    <?php
-        include "view/components/footer.php";
-    ?>
-    <!-- END FOOTER -->
-</body>
 
+        <!-- Hiển thị tổng giá trị giỏ hàng -->
+        <?php 
+        $total = 0;
+        foreach ($cart as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+        ?>
+        <h3>Tổng giá trị giỏ hàng: <?= number_format($total, 0, ',', '.') ?> VNĐ</h3>
+
+        <div>
+            <a href="/checkout?user_id=<?= htmlspecialchars($_GET['user_id'] ?? 0) ?>"><button>Thanh toán</button></a>
+        </div>
+    </div>
+</body>
 </html>

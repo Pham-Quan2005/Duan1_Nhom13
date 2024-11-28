@@ -1,3 +1,11 @@
+<?php 
+require_once __DIR__ . '/../../commom/function.php';
+require_once './commom/dbhelper.php';
+
+// Lấy danh mục từ cơ sở dữ liệu
+$sql = "SELECT * FROM category";
+$listCategory = executeResult($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
