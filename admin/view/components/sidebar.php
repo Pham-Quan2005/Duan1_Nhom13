@@ -25,5 +25,11 @@
                 <i class="fa-regular fa-clipboard fa-fw"></i> Danh sách đơn hàng
             </a>
         </li>
+        <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3 mb-3">
+            <a href="http://localhost/Du_an1_2/">
+                <i class="fa-solid fa-arrow-left fa-fw"></i> Quay lại trang người dùng
+            </a>
+        </li>
+
     </ul>
 </div>

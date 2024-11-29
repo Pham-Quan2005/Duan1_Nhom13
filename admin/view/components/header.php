@@ -9,6 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/be9ed8669f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        a {
+  text-decoration: none;
+}
+
+    </style>
 </head>
 
 <header class="bg-light pb-2 pt-2">

@@ -34,12 +34,9 @@ match ($act) {
     'logout' => (new AccountController())->logout(),
 
     // Quản lý giỏ hàng
-    'cart' => match ($_GET['action'] ?? '') {
         'add' => (new CartController())->add(),
         'view' => (new CartController())->view(),
         'remove' => (new CartController())->remove(),
-        default => (new HomeController())->cart(),
-    },
 
     // Trang chi tiết sản phẩm
     'detail' => (new ProductController())->detailPro(),
@@ -49,5 +46,5 @@ match ($act) {
 
     // Admin
     'admin' => (new AccountController())->admin(),
-};
+    };
 ?>

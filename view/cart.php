@@ -51,16 +51,14 @@ include "view/components/header.php";
         <?php foreach ($cart as $item) : ?>
             <tr>
                 <td>
-                    <img src="<?= htmlspecialchars($item['image_src']) ?>" 
-                         alt="<?= htmlspecialchars($item['name']) ?>" 
-                         width="50">
+                    <img src="<?= $item['product_image'] ?>" alt="">
                 </td>
-                <td><?= htmlspecialchars($item['name']) ?></td>
+                <td><?= htmlspecialchars($item['product_name']) ?></td>
                 <td><?= htmlspecialchars($item['quantity']) ?></td>
-                <td><?= number_format(htmlspecialchars($item['price']), 0, ',', '.') ?> VNĐ</td>
-                <td><?= number_format(htmlspecialchars($item['price'] * $item['quantity']), 0, ',', '.') ?> VNĐ</td>
+                <td><?= number_format(htmlspecialchars($item['product_price']), 0, ',', '.') ?> VNĐ</td>
+                <td><?= number_format(htmlspecialchars($item['product_price'] * $item['quantity']), 0, ',', '.') ?> VNĐ</td>
                 <td>
-                    <form action="?act=cart&action=remove" method="POST">
+                    <form action="?act=cart&act=remove" method="POST">
                         <input type="hidden" name="user_id" value="<?= htmlspecialchars($_GET['user_id'] ?? 0) ?>">
                         <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['product_id']) ?>"> <!-- Sửa lại product_id -->
                         <button type="submit" class="btn-remove">Xóa</button>
@@ -81,7 +79,7 @@ include "view/components/header.php";
         <?php 
         $total = 0;
         foreach ($cart as $item) {
-            $total += $item['price'] * $item['quantity'];
+            $total += $item['product_price'] * $item['quantity'];
         }
         ?>
         <h3>Tổng giá trị giỏ hàng: <?= number_format($total, 0, ',', '.') ?> VNĐ</h3>

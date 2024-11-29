@@ -44,11 +44,12 @@ class AccountController
                 $_SESSION['user_id'] = $result->id;
                 $_SESSION['user_role'] = $result->role;
 
-                if ($result->role === 1) {
-                    header('Location: admin/index.php');
-                } else {
-                    header('location: index.php');
-                }
+                // if ($result->role === 1) {
+                //     header('Location: admin/index.php');
+                // } else {
+                //     header('location: index.php');
+                // }
+                header('location: index.php');
             }
         }
 

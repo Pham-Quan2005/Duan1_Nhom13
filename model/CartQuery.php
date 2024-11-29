@@ -43,9 +43,7 @@ class CartQuery
 
     // Lấy giỏ hàng của người dùng
     public function getCart($userId) {
-        $sql = "SELECT product_id, product_name, product_image, product_price, quantity 
-                FROM cart 
-                WHERE user_id = :user_id";
+        $sql = "SELECT * FROM `cart` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId);
         $stmt->execute();

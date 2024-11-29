@@ -60,15 +60,17 @@ $listCategory = executeResult($sql);
             </div>
             <div class="item">
                 <?php if (isset($_SESSION['user_name'])): ?>
-                    <a href="?act=admin">Vào quản trị</a>
                 <?php else: ?>
                     <a href="?act=register">Đăng ký</a>
                 <?php endif; ?>
+                <?php if(isset($_SESSION['user_role'])==1){ ?>
+                    <a href="?act=admin">Vào quản trị</a>
+                <?php } ?>
             </div>
         </div>
         <div id="actions">
             <div class="item">
-                <a href="?act=cart&action=view"><img src="assets/cart.png" alt="Giỏ hàng"></a>
+                <a href="?act=view"><img src="assets/cart.png" alt="Giỏ hàng"></a>
             </div>
         </div>
     </div>
