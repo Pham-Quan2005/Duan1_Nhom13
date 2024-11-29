@@ -7,22 +7,22 @@
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3">
             <a href="?act=list-product">
-                <i class="fa-solid fa-layer-group fa-fw"></i> Danh sách sản phẩm
+                <i class="fa-solid fa-layer-group fa-fw"></i> Quản lý sản phẩm
             </a>
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3">
             <a href="?act=list-category">
-                <i class="fa-solid fa-layer-group fa-fw"></i> Danh mục sản phẩm
+                <i class="fa-solid fa-layer-group fa-fw"></i> Quản lý danh mục
             </a>
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3">
             <a href="?act=list-account">
-                <i class="fa-solid fa-user fa-fw"></i> Danh sách tài khoản
+                <i class="fa-solid fa-user fa-fw"></i> Quản lý tài khoản
             </a>
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3 mb-3">
-            <a href="?act=list-bill">
-                <i class="fa-regular fa-clipboard fa-fw"></i> Danh sách đơn hàng
+            <a href="">
+                <i class="fa-regular fa-clipboard fa-fw"></i> Quản lý đơn hàng
             </a>
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3 mb-3">

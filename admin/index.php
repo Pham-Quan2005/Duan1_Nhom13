@@ -5,7 +5,6 @@ require_once "../commom/env.php";
 require_once "../commom/function.php";
 
 require_once "controller/ProductController.php";
-require_once "controller/BillController.php";
 require_once "controller/CategoryController.php";
 require_once "controller/AccountController.php";
 
@@ -13,8 +12,6 @@ require_once "model/ProductQuery.php";
 require_once "model/Product.php";
 require_once "model/CategoryQuery.php";
 require_once "model/Category.php";
-require_once "model/Bill.php";
-require_once "model/BillQuery.php";
 require_once "model/Account.php";
 require_once "model/AccountQuery.php";
 
@@ -46,7 +43,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["user_name"]) && $_SESSION["u
         'create-acc' => (new AccountController())->CreateAcc(),
         'update-acc' => (new AccountController())->Update($id),
 
-        'list-bill' => (new BillController())->list(),
         'logout' => (new  AccountController())->logout(),
         'home' => (new HomeController())->home(),
         'category' => (new ProductController())->showPro(),
