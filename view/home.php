@@ -49,12 +49,14 @@
                             <div class="card-body flex-1">
                                 <h5 class="card-title truncate"><?= $sp->name ?></h5>
                                 <span class="fw-bold"><?= $sp->price ?>VND</span>
-                                <form action="" method="POST">
+                                <!-- <form action="" method="POST">
                                     <input type="hidden" name="id" value="<?= $sp->id ?>">
                                     <input type="hidden" name="quantity" value="1">
                                     <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
-                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="?act=checkout">Đặt hàng</a></button>
-                                </form>
+                                    <a href="?act=checkout"><button class="btn btn-danger rounded-pill w-100 btn-sm mt-1">Đặt hàng</button></a>
+                                </form> -->
+                                <a href="?act=detail&id=<?= $sp->id ?>"> <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1" name="detail1">Xem chi tiết</button></a>
+                                <a href="?act=checkout"><button class="btn btn-danger rounded-pill w-100 btn-sm mt-1">Đặt hàng</button></a>
                             </div>
                         </div>
                     </div>

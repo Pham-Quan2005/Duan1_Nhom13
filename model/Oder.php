@@ -7,5 +7,6 @@
         public $product_image;
         public $product_price;
         public $quantity;
+        public $status;
     }
 ?>

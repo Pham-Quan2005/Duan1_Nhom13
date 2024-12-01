@@ -41,7 +41,7 @@ class CartController {
         // }
 
         $cart = $this->cartModel->getCart($userId); // Lấy dữ liệu giỏ hàng từ model
-        require_once 'view/cart.php'; // Hiển thị view giỏ hàng
+        require_once 'view/Cart.php'; // Hiển thị view giỏ hàng
     }
     public function checkoutForm() {
         $userId = $_SESSION['user_id'];
@@ -77,9 +77,8 @@ class CartController {
             echo "<script>alert('Dữ liệu không hợp lệ!'); window.history.back();</script>";
             return;
         }
-
         if ($this->cartModel->updateQuantity($userId, $productId, $quantity)) {
-            header("Location: ?act=cart&action=view");
+            header("Location: ?act=cart&act=view");
         } else {
             echo "<script>alert('Không thể cập nhật số lượng sản phẩm!'); window.history.back();</script>";
         }

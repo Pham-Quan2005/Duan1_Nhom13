@@ -35,6 +35,7 @@ include "view/components/header.php";
 <body>
     <div class="container">
         <h1>Giỏ hàng của bạn</h1>
+        <h1><a href="?act=viewOder">Tình trạng đơn hàng</a></h1>
         <table>
             <thead>
                 <tr>

@@ -10,6 +10,8 @@ require_once "controller/HomeController.php";
 require_once "controller/AccountController.php";
 require_once "controller/ProductController.php";
 require_once "controller/CartController.php";
+require_once "controller/OderController.php";
+
 
 // Nhúng toàn bộ file trong model
 require_once "model/ProductQuery.php";
@@ -37,6 +39,10 @@ match ($act) {
         'add' => (new CartController())->add(),
         'view' => (new CartController())->view(),
         'remove' => (new CartController())->remove(),
+    // Quản lý đơn hàng
+    'addOder' => (new OderController())->addOder(),
+    'viewOder' => (new OderController())->viewOder(),
+    'removeOder' => (new OderController())->removeOder(),
 
     // Trang chi tiết sản phẩm
     'detail' => (new ProductController())->detailPro(),

@@ -22,7 +22,7 @@ $listCategory = executeResult($sql);
 <div id="wrapper">
     <div id="header">
         <a href="" class="logo">
-            <img src="assets/logo.png" alt="Logo">
+        <img src="assets/image.png" alt="Logo" width="100" height="60">
         </a>
         <div id="menu">
             <div class="item">
