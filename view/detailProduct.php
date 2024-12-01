@@ -34,7 +34,7 @@
                 <span>Số Lượng: <?= $sp->quantity ?> còn</span>
                 <br>
                 <div>
-    <a href="#"><button class="btn btn-success">Mua ngay</button></a>
+    <a href="?act=checkout"><button class="btn btn-success">Mua ngay</button></a>
     <form action="?act=cart&act=add" method="POST" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $sp->id ?>">
         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 0 ?>">

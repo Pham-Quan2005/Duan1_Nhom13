@@ -46,5 +46,6 @@ match ($act) {
 
     // Admin
     'admin' => (new AccountController())->admin(),
+    'checkout' => (new CartController())->checkoutForm(),
     };
 ?>

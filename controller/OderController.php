@@ -1,11 +1,11 @@
 <?php
-require_once 'model/CartQuery.php';
+require_once 'model/OderQuery.php';
 
-class CartController {
+class OderController {
     private $cartModel;
 
     public function __construct() {
-        $this->cartModel = new CartQuery(); // Đảm bảo `CartQuery` đã được định nghĩa và đúng tên class
+        $this->cartModel = new OderQuery(); // Đảm bảo `CartQuery` đã được định nghĩa và đúng tên class
     }
 
     // Thêm sản phẩm vào giỏ hàng
@@ -42,12 +42,6 @@ class CartController {
 
         $cart = $this->cartModel->getCart($userId); // Lấy dữ liệu giỏ hàng từ model
         require_once 'view/cart.php'; // Hiển thị view giỏ hàng
-    }
-    public function checkoutForm() {
-        $userId = $_SESSION['user_id'];
-
-        $cart = $this->cartModel->getCart($userId); // Lấy dữ liệu giỏ hàng từ model
-        include 'view/checkout-form.php';  // Đảm bảo đường dẫn chính xác tới view của bạn
     }
 
     // Xóa sản phẩm khỏi giỏ hàng

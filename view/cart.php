@@ -38,7 +38,6 @@ include "view/components/header.php";
         <table>
             <thead>
                 <tr>
-                    <th>Ảnh sản phẩm</th>
                     <th>Tên sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Giá sản phẩm</th>
@@ -50,9 +49,6 @@ include "view/components/header.php";
     <?php if (!empty($cart)) : ?>
         <?php foreach ($cart as $item) : ?>
             <tr>
-                <td>
-                    <img src="<?= $item['product_image'] ?>" alt="">
-                </td>
                 <td><?= htmlspecialchars($item['product_name']) ?></td>
                 <td><?= htmlspecialchars($item['quantity']) ?></td>
                 <td><?= number_format(htmlspecialchars($item['product_price']), 0, ',', '.') ?> VNĐ</td>
@@ -72,9 +68,7 @@ include "view/components/header.php";
         </tr>
     <?php endif; ?>
 </tbody>
-
         </table>
-
         <!-- Hiển thị tổng giá trị giỏ hàng -->
         <?php 
         $total = 0;
@@ -83,10 +77,16 @@ include "view/components/header.php";
         }
         ?>
         <h3>Tổng giá trị giỏ hàng: <?= number_format($total, 0, ',', '.') ?> VNĐ</h3>
-
         <div>
-            <a href="/checkout?user_id=<?= htmlspecialchars($_GET['user_id'] ?? 0) ?>"><button>Thanh toán</button></a>
+    <a href="?act=checkout"><button>Đặt hàng</button></a>
+    <!-- <form action="?act=checkout" method="POST" style="display:inline;">
+        <input type="hidden" name="product_id" value="<?= $sp->id ?>">
+        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 0 ?>">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="btn btn-success">Đặt hàng</button>
+    </form> -->
         </div>
+        
     </div>
 </body>
 </html>

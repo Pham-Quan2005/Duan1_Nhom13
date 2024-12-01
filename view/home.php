@@ -53,7 +53,7 @@
                                     <input type="hidden" name="id" value="<?= $sp->id ?>">
                                     <input type="hidden" name="quantity" value="1">
                                     <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="?act=detail&id=<?= $sp->id ?>">Xem chi tiết</a></button>
-                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="checkout-form.php">Mua hàng</a></button>
+                                    <button class="btn btn-danger rounded-pill w-100 btn-sm mt-1"><a href="?act=checkout">Đặt hàng</a></button>
                                 </form>
                             </div>
                         </div>
