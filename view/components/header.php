@@ -45,7 +45,7 @@ $listCategory = executeResult($sql);
                 </li>
             </div>
             <div class="item">
-                <a href="">Blog</a>
+                <a href="index.php?act=about">About</a>
             </div>
             <div class="item">
                 <a href="index.php?act=contact">Contact</a>
