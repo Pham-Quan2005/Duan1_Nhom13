@@ -34,8 +34,16 @@ include "view/components/header.php";
 </head>
 <body>
     <div class="container">
-        <h1>Giỏ hàng của bạn</h1>
-        <h1><a href="index.php?act=order">Tình trạng đơn hàng</a></h1>
+    <div class="panel-heading" style="padding: 1rem 0;">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="?act=view">Giỏ hàng</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="?act=order">Lịch sử mua hàng</a>
+                </li>
+            </ul>
+        </div>
         <table>
             <thead>
                 <tr>
