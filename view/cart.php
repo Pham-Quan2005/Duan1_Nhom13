@@ -87,7 +87,7 @@ include "view/components/header.php";
         ?>
         <h3>Tổng giá trị giỏ hàng: <?= number_format($total, 0, ',', '.') ?> VNĐ</h3>
         <div>
-    <a href="?act=payment"><button>Đặt hàng</button></a>
+    <a href="?act=payment"><button class="btn btn-primary">Đặt hàng</button></a>
     <!-- <form action="?act=checkout" method="POST" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $sp->id ?>">
         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 0 ?>">
