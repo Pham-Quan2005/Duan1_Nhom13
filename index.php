@@ -45,6 +45,7 @@ match ($act) {
     'removeOder' => (new OderController())->removeOder(),
     //contact 
     'contact' => (new CartController())->contact(),
+    'about' => (new CartController())->about(),
     // Trang chi tiết sản phẩm
     'detail' => (new ProductController())->detailPro(),
 
