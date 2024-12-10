@@ -29,9 +29,11 @@
         <div class="container">
     <div id="ant-layout">
     <section class="search-quan">
-    <i class="fas fa-search"></i>
-    <form action="thucdon.php" method="GET">
-        <input name="search" type="text" placeholder="Tìm món hoặc thức ăn">
+    <form action="index.php?act=productCate" method="get" class="d-flex">
+        <div class="input-group">
+            <input type="text" class="form-control" name="keyword" placeholder="Tìm kiếm sản phẩm..." value="<?= $_GET['keyword'] ?? '' ?>" />
+            <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
+        </div>
     </form>
 </section>
     </div>
