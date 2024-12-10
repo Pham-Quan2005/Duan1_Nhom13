@@ -26,7 +26,7 @@
             </a>
         </li>
         <li class="list-group-item list-group-item-action rounded-0 border-0 mt-3 mb-3">
-            <a href="http://localhost/Du_an1_2/">
+            <a href="http://localhost/PH54169_WD19316/Duan1_Nhom13/">
                 <i class="fa-solid fa-arrow-left fa-fw"></i> Quay lại trang người dùng
             </a>
         </li>
