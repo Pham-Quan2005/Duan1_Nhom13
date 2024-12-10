@@ -13,13 +13,13 @@
     <section class="about-section">
         <div class="container">
             <h1>Về Chúng Tôi</h1>
-            <p>Chào mừng đến với <strong>[Tên Doanh Nghiệp]</strong> – nơi hội tụ những món ăn thượng hạng, được chế biến từ nguyên liệu tươi ngon và chất lượng cao nhất. Chúng tôi cam kết mang đến cho bạn những trải nghiệm ẩm thực tuyệt vời, từ các món ăn đẳng cấp đến dịch vụ khách hàng tận tâm.</p>
+            <p>Chào mừng đến với <strong>Thế Giới Ăn Vặt</strong> – nơi hội tụ những món ăn thượng hạng, được chế biến từ nguyên liệu tươi ngon và chất lượng cao nhất. Chúng tôi cam kết mang đến cho bạn những trải nghiệm ẩm thực tuyệt vời, từ các món ăn đẳng cấp đến dịch vụ khách hàng tận tâm.</p>
 
             <h2>Sứ Mệnh của Chúng Tôi</h2>
-            <p>Tại <strong>[Tên Doanh Nghiệp]</strong>, sứ mệnh của chúng tôi là mang đến những món ăn không chỉ thỏa mãn vị giác mà còn nâng tầm trải nghiệm ẩm thực của bạn. Chúng tôi luôn tìm kiếm những nguyên liệu tốt nhất từ khắp nơi trên thế giới, kết hợp với tay nghề của đội ngũ đầu bếp chuyên nghiệp để tạo ra những món ăn hoàn hảo, đáp ứng yêu cầu của những thực khách khó tính nhất.</p>
+            <p>Tại <strong>Thế Giới Ăn Vặt</strong>, sứ mệnh của chúng tôi là mang đến những món ăn không chỉ thỏa mãn vị giác mà còn nâng tầm trải nghiệm ẩm thực của bạn. Chúng tôi luôn tìm kiếm những nguyên liệu tốt nhất từ khắp nơi trên thế giới, kết hợp với tay nghề của đội ngũ đầu bếp chuyên nghiệp để tạo ra những món ăn hoàn hảo, đáp ứng yêu cầu của những thực khách khó tính nhất.</p>
 
             <h2>Nguyên Liệu Chất Lượng</h2>
-            <p>Mỗi món ăn tại <strong>[Tên Doanh Nghiệp]</strong> đều được chế biến từ những nguyên liệu tươi ngon và cao cấp. Chúng tôi lựa chọn kỹ lưỡng từ các nhà cung cấp uy tín, đảm bảo rằng mỗi món ăn đều có hương vị tuyệt vời, dinh dưỡng đầy đủ và an toàn cho sức khỏe.</p>
+            <p>Mỗi món ăn tại <strong>Thế Giới Ăn Vặt</strong> đều được chế biến từ những nguyên liệu tươi ngon và cao cấp. Chúng tôi lựa chọn kỹ lưỡng từ các nhà cung cấp uy tín, đảm bảo rằng mỗi món ăn đều có hương vị tuyệt vời, dinh dưỡng đầy đủ và an toàn cho sức khỏe.</p>
 
             <h2>Đội Ngũ Đầu Bếp</h2>
             <p>Đội ngũ đầu bếp của chúng tôi là những chuyên gia ẩm thực, được đào tạo bài bản và có kinh nghiệm nhiều năm trong ngành. Họ không chỉ là những người tạo ra món ăn ngon mà còn là những nghệ sĩ trong việc biến mỗi bữa ăn thành một tác phẩm nghệ thuật đầy sáng tạo.</p>
@@ -27,7 +27,7 @@
             <h2>Trải Nghiệm Khách Hàng</h2>
             <p>Chúng tôi hiểu rằng mỗi bữa ăn không chỉ là việc thưởng thức thức ăn mà còn là một trải nghiệm. Vì vậy, chúng tôi cam kết mang đến cho bạn không gian ấm cúng, sang trọng và dịch vụ chuyên nghiệp, tận tình.</p>
 
-            <p><strong>Hãy đến với chúng tôi và để <strong>[Tên Doanh Nghiệp]</strong> mang đến cho bạn những bữa ăn tuyệt vời!</strong></p>
+            <p><strong>Hãy đến với chúng tôi và để <strong>Thế Giới Ăn Vặt</strong> mang đến cho bạn những bữa ăn tuyệt vời!</strong></p>
         </div>
     </section>
 
