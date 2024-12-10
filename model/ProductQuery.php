@@ -163,4 +163,22 @@ class ProductQuery
             echo "<hr>";
         }
     }
+    public function searchByName($keyword)
+{
+    try {
+        $sql = "SELECT * FROM product WHERE name LIKE :keyword";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['keyword' => '%' . $keyword . '%']);
+        $data = $stmt->fetchAll();
+        
+        $productList = [];
+        foreach ($data as $row) {
+            $productList[] = converToObjectProduct($row);
+        }
+        return $productList;
+    } catch (Exception $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
 }
