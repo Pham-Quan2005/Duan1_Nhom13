@@ -92,6 +92,14 @@ class CartController {
             
         require_once ('./view/contact.php');
     }
-
+    public function about() {
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/about.php');
+    }
 }
 ?>
