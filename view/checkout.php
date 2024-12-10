@@ -24,7 +24,7 @@ include "view/components/header.php";
             <h2 class="h3 mb-3">Thông tin khách hàng</h2>
             <div class="form-group mb-3">
                 <label for="fullname" class="form-label">Họ và tên:</label>
-                <input type="text" class="form-control" name="fullname" id="fullname" required>
+                <input type="text" class="form-control" name="fullname" id="fullname"  required>
             </div>
             <div class="form-group mb-3">
                 <label for="email" class="form-label">Email:</label>

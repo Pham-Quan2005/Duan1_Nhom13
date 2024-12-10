@@ -5,6 +5,7 @@ class AccountController
     public $accountQuery;
     public $categoryQuery;
 
+
     public function __construct()
     {
         $this->accountQuery = new AccountQuery();
@@ -100,15 +101,31 @@ class AccountController
                 }
             }
         }
-
-
-
         include "view/account/register.php";
     }
-
     public function logout()
     {
         session_destroy();
         header("Location: ?act=login");
     }
+    public function profile()
+{
+    // Kiểm tra người dùng đã đăng nhập chưa
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ?act=login"); // Chuyển về trang đăng nhập nếu chưa đăng nhập
+        exit();
+    }
+
+    // Lấy thông tin tài khoản từ database
+    $userId = $_SESSION['user_id'];
+    $userInfo = $this->accountQuery->getAccountInfo($userId);
+
+    // Kiểm tra dữ liệu và chuyển sang giao diện
+    if ($userInfo) {
+        include "view/account/checkout.php"; // Gọi file view hiển thị
+    } else {
+        echo "Không tìm thấy thông tin tài khoản.";
+    }
+}
+    
 }

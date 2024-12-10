@@ -29,7 +29,6 @@ class OrderQuery
             // Lấy ID của đơn hàng vừa tạo
             $orderId = $this->pdo->lastInsertId();
 
-            // Lưu chi tiết sản phẩm của đơn hàng vào bảng order_details
             foreach ($_SESSION['cart'] as $item) {
                 $sql = "INSERT INTO order_details (order_id, product_id, product_name, product_price, quantity)
                         VALUES (:order_id, :product_id, :product_name, :product_price, :quantity)";

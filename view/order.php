@@ -1,5 +1,17 @@
 <?php
 include "view/components/header.php";
+require_once('commom/function.php'); // Tập tin chứa các hàm trên
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'])) {
+    $orderId = $_POST['order_id'];
+
+    // Gọi hàm để xóa đơn hàng
+    if (deleteorder($orderId)) {
+        echo "alert('Đơn hàng đã được xóa!');";
+    } 
+}
+// Lấy danh sách đơn hàng
+$orders = getOrders();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,17 +95,6 @@ include "view/components/header.php";
                     <?php foreach ($cart as $item) : ?>
                         <?php foreach ($orders as $order): ?>
                             <tr>
-                                <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['order_id'])) {
-                                    $orderId = $_POST['order_id'];
-
-                                    // Gọi hàm để xóa đơn hàng
-                                    if (deleteorder($orderId)) {
-                                        echo "alert('Đơn hàng đã được xóa!');";
-                                    }
-                                }
-                                // Lấy danh sách đơn hàng
-                                $orders = getOrders();
-                                ?>
                                 <td><?= htmlspecialchars($item['product_name']) ?></td>
                                 <td><?= htmlspecialchars($item['quantity']) ?></td>
                                 <td><?= number_format($item['product_price'], 0, ',', '.') ?> VNĐ</td>

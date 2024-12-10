@@ -52,4 +52,12 @@ class AccountQuery
             echo "<hr>";
         }
     }
+    public function getAccountInfo($userId)
+    {
+        $sql = "SELECT name, email, address FROM account WHERE id = :userId";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_OBJ); // Trả về một đối tượng chứa thông tin
+    }
 }
