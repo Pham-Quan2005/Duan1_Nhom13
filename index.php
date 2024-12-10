@@ -40,9 +40,9 @@ match ($act) {
         'view' => (new CartController())->view(),
         'remove' => (new CartController())->remove(),
     // Quản lý đơn hàng
-    'addOder' => (new OderController())->addOder(),
-    'viewOder' => (new OderController())->viewOder(),
-    'removeOder' => (new OderController())->removeOder(),
+    'add' => (new CartController())->add(),
+        'view' => (new CartController())->view(),
+        'remove' => (new CartController())->remove(),
     //contact 
     'contact' => (new CartController())->contact(),
     'about' => (new CartController())->about(),
@@ -51,7 +51,12 @@ match ($act) {
 
     // Hiển thị sản phẩm theo danh mục
     'category' => (new ProductController())->showPro(),
-
+    //don hang
+    'checkout'=>(new OrderController())->checkout(),
+    'payment'=>(new OrderController())->payment(),
+    'order'=>(new OrderController())->order(),
+    'detailorder'=>(new OrderController())->detailorder(),
+    'orderdelete'=>(new OrderController())->orderdelete(),
     // Admin
     'admin' => (new AccountController())->admin(),
     'checkout' => (new CartController())->checkoutForm(),

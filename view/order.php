@@ -46,6 +46,7 @@ include "view/components/header.php";
 </head>
 <body>
     <div class="container">
+        <h1><a href="?act=view">Giỏ hàng của bạn</a></h1>
         <h1>Đơn hàng của bạn</h1>
         <table>
             <thead>

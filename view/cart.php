@@ -35,7 +35,7 @@ include "view/components/header.php";
 <body>
     <div class="container">
         <h1>Giỏ hàng của bạn</h1>
-        <h1><a href="?act=viewOder">Tình trạng đơn hàng</a></h1>
+        <h1><a href="index.php?act=order">Tình trạng đơn hàng</a></h1>
         <table>
             <thead>
                 <tr>
@@ -79,7 +79,7 @@ include "view/components/header.php";
         ?>
         <h3>Tổng giá trị giỏ hàng: <?= number_format($total, 0, ',', '.') ?> VNĐ</h3>
         <div>
-    <a href="?act=checkout"><button>Đặt hàng</button></a>
+    <a href="?act=payment"><button>Đặt hàng</button></a>
     <!-- <form action="?act=checkout" method="POST" style="display:inline;">
         <input type="hidden" name="product_id" value="<?= $sp->id ?>">
         <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 0 ?>">

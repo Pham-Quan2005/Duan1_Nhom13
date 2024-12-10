@@ -1,99 +1,60 @@
 <?php
-require_once 'model/OderQuery.php';
+require_once 'model/CartQuery.php';
 
-class OderController {
-    private $oderModel;
-
+class OrderController {
+    private $cartModel;
+    public $pdo;
     public function __construct() {
-        $this->oderModel = new OderQuery(); // Đảm bảo `OderQuery` đã được định nghĩa đúng
+        $this->cartModel = new CartQuery(); // Đảm bảo `CartQuery` đã được định nghĩa và đúng tên class
     }
-
-    // Thêm sản phẩm vào giỏ hàng
-    public function addOder() {
-        if (!empty($_SESSION['user_id'])) {
-            $userId = $_SESSION['user_id'];
-            $productId = $_POST['product_id'] ?? 0;
-            $quantity = $_POST['quantity'] ?? 1;
-            $status = 'Chờ giao hàng'; // Đặt trạng thái mặc định là
-
-            if ($productId <= 0 || $quantity <= 0) {
-                echo "<script>alert('Dữ liệu không hợp lệ!'); window.history.back();</script>";
-                return;
-            }
-
-            if ($this->oderModel->addToOder($userId, $productId, $quantity, $status)) {
-                echo "<script>alert('Đặt hàng thành công!'); window.location.href='?act=viewOder';</script>";
-            } else {
-                echo "<script>alert('Đặt hàng thất bại!'); window.history.back();</script>";
-            }
-        } else {
-            echo "<script>alert('Bạn chưa đăng nhập.'); window.location.href='?act=login';</script>";
-        }
-    }
-
-    // Hiển thị giỏ hàng
-    public function viewOder() {
-        // if (empty($_SESSION['user_id'])) {
-        //     echo "<script>alert('Bạn cần đăng nhập để xem đơn hàng.'); window.location.href='?act=login';</script>";
-        //     return;
-        // }
-
+    public function checkout() {
         $userId = $_SESSION['user_id'];
-        $oder = $this->oderModel->getOder($userId); // Lấy dữ liệu giỏ hàng từ model
-        require_once 'view/Oder.php'; // Hiển thị view giỏ hàng
+        $cart = $this->cartModel->getCart($userId);
+        unset($_SESSION['cart']);
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/checkout.php');
     }
-
-    // Xóa sản phẩm khỏi giỏ hàng
-    public function removeOder() {
-        $userId = $_SESSION['user_id'] ?? 0;
-        $productId = $_POST['product_id'] ?? 0;
-
-        if ($userId === 0 || $productId === 0) {
-            echo "<script>alert('Dữ liệu không hợp lệ!'); window.history.back();</script>";
-            return;
-        }
-
-        if ($this->oderModel->removeFromOder($userId, $productId)) {
-            header("Location: ?act=viewOder");
-        } else {
-            echo "<script>alert('Không thể xóa sản phẩm!'); window.history.back();</script>";
-        }
+    public function payment() {
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/payment.php');
     }
-
-    // Cập nhật số lượng sản phẩm trong giỏ hàng
-    public function updateOder() {
-        $userId = $_SESSION['user_id'] ?? 0;
-        $productId = $_POST['product_id'] ?? 0;
-        $quantity = $_POST['quantity'] ?? 1;
-
-        if ($userId === 0 || $productId === 0 || $quantity < 1) {
-            echo "<script>alert('Dữ liệu không hợp lệ!'); window.history.back();</script>";
-            return;
-        }
-
-        if ($this->oderModel->updateQuantityOder($userId, $productId, $quantity)) {
-            header("Location: ?act=viewOder");
-        } else {
-            echo "<script>alert('Không thể cập nhật số lượng sản phẩm!'); window.history.back();</script>";
-        }
+    public function order() {
+        $userId = $_SESSION['user_id'];
+        $cart = $this->cartModel->getCart($userId);
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+        require_once ('./view/order.php');
     }
-
-    // Cập nhật trạng thái đơn hàng
-    public function updateStatusOder() {
-        $userId = $_SESSION['user_id'] ?? 0;
-        $productId = $_POST['product_id'] ?? 0;
-        $status = $_POST['status'] ?? '';
-
-        if ($userId === 0 || $productId === 0 || !in_array($status, ['Chờ giao hàng', 'Đang giao hàng', 'Đã giao hàng'])) {
-            echo "<script>alert('Dữ liệu không hợp lệ!'); window.history.back();</script>";
-            return;
-        }
-
-        if ($this->oderModel->updateStatusOder($userId, $productId, $status)) {
-            echo "<script>alert('Cập nhật trạng thái thành công!'); window.location.href='?act=viewOder';</script>";
-        } else {
-            echo "<script>alert('Không thể cập nhật trạng thái!'); window.history.back();</script>";
-        }
+    public function orderdelete() {
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/order.php');
+    }
+    public function detailorder() {
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/order.php');
     }
 }
 ?>
