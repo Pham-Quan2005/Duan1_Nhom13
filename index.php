@@ -43,7 +43,8 @@ match ($act) {
     'addOder' => (new OderController())->addOder(),
     'viewOder' => (new OderController())->viewOder(),
     'removeOder' => (new OderController())->removeOder(),
-
+    //contact 
+    'contact' => (new CartController())->contact(),
     // Trang chi tiết sản phẩm
     'detail' => (new ProductController())->detailPro(),
 

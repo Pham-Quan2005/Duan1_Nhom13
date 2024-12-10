@@ -83,5 +83,15 @@ class CartController {
             echo "<script>alert('Không thể cập nhật số lượng sản phẩm!'); window.history.back();</script>";
         }
     }
+    public function contact() {
+        // Tính tổng giá trị giỏ hàng
+        
+            //lay thong tin tren form thanh toan
+            //tao don hang thanh cong
+            //lay idorder +thong tin gio hang
+            
+        require_once ('./view/contact.php');
+    }
+
 }
 ?>

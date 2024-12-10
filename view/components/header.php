@@ -48,7 +48,7 @@ $listCategory = executeResult($sql);
                 <a href="">Blog</a>
             </div>
             <div class="item">
-                <a href="">Liên hệ</a>
+                <a href="index.php?act=contact">Contact</a>
             </div>
             <div class="item">
                 <?php if (isset($_SESSION['user_name'])): ?>
